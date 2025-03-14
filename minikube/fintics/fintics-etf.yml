@@ -35,13 +35,13 @@ spec:
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
-            failureThreshold: 10
+            failureThreshold: 60
           livenessProbe:
             tcpSocket:
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
-            failureThreshold: 10
+            failureThreshold: 60
           env:
             - name: TZ
               value: Asia/Seoul
