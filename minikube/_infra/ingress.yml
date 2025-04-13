@@ -51,7 +51,7 @@ spec:
   ingressClassName: nginx
   rules:
     # arch4j-web
-    - host: dev.arch4j-web.chomookun.org
+    - host: arch4j-web.chomookun.org
       http:
         paths:
           - pathType: Prefix
@@ -62,7 +62,7 @@ spec:
                 port:
                   number: 8080
     # arch4j-daemon
-    - host: dev.arch4j-daemon.chomookun.org
+    - host: arch4j-daemon.chomookun.org
       http:
         paths:
           - pathType: Prefix
@@ -117,7 +117,7 @@ spec:
                 port:
                   number: 8080
     # duice-example
-    - host: dev.duice-example.chomookun.org
+    - host: duice-example.chomookun.org
       http:
         paths:
           - pathType: Prefix
@@ -128,7 +128,7 @@ spec:
                 port:
                   number: 3000
     # soma-admin
-    - host: dev.soma-admin.oopscraft.org
+    - host: soma-admin.oopscraft.org
       http:
         paths:
           - pathType: Prefix
@@ -139,7 +139,7 @@ spec:
                 port:
                   number: 8080
     # soma-collector
-    - host: dev.soma-collector.oopscraft.org
+    - host: soma-collector.oopscraft.org
       http:
         paths:
           - pathType: Prefix
@@ -150,7 +150,7 @@ spec:
                 port:
                   number: 8080
     # batman-admin
-    - host: dev.batman-admin.oopscraft.org
+    - host: batman-admin.oopscraft.org
       http:
         paths:
           - pathType: Prefix
