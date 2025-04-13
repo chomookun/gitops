@@ -18,6 +18,8 @@
 #          args: []
 #          imagePullPolicy: Always
 #          env:
+#            - name: SPRING_PROFILES_ACTIVE
+#              value: prod
 #            - name: JASYPT_ENCRYPTOR_PASSWORD
 #              valueFrom:
 #                secretKeyRef:

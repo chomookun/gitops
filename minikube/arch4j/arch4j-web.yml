@@ -43,6 +43,8 @@ spec:
             periodSeconds: 10
             failureThreshold: 60
           env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
             - name: JASYPT_ENCRYPTOR_PASSWORD
               valueFrom:
                 secretKeyRef:

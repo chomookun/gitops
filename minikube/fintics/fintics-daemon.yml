@@ -34,6 +34,8 @@ spec:
           env:
             - name: TZ
               value: Asia/Seoul
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
             - name: JASYPT_ENCRYPTOR_PASSWORD
               valueFrom:
                 secretKeyRef:
