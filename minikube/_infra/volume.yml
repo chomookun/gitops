@@ -9,7 +9,7 @@ spec:
   accessModes:
     - ReadWriteMany
   capacity:
-    storage: 1Gi
+    storage: 100Mi
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 192.168.0.2
@@ -35,4 +35,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Gi
+      storage: 100Mi
