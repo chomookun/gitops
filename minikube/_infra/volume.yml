@@ -31,7 +31,7 @@ metadata:
   namespace: default
 spec:
   volumeName: pv-data
-  storageClassName: standard
+  storageClassName: ""
   accessModes:
     - ReadWriteMany
   resources:
