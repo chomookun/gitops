@@ -12,18 +12,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    # argocd
-    - host: argocd.oopscraft.org
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: argocd
-                port:
-                  number: 443
-    # argocd
+    # argocd-server
     - host: argocd.chomookun.org
       http:
         paths:
@@ -31,7 +20,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: argocd
+                name: argocd-server
                 port:
                   number: 443
 
