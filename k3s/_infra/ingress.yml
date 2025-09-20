@@ -1,0 +1,161 @@
+#==================================================
+# ingress-https
+#==================================================
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-https
+  namespace: default
+  annotations:
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/service.serversscheme: "https"
+spec:
+  ingressClassName: traefik
+  rules:
+    # argocd
+    - host: argocd.oopscraft.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: argocd
+                port:
+                  number: 443
+    # argocd
+    - host: argocd.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: argocd
+                port:
+                  number: 443
+
+---
+#==================================================
+# ingress-http
+#==================================================
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-http
+  namespace: default
+  annotations:
+spec:
+  ingressClassName: traefik
+  rules:
+    # arch4j-web
+    - host: arch4j-web.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: arch4j-web
+                port:
+                  number: 8080
+    # arch4j-daemon
+    - host: arch4j-daemon.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: arch4j-daemon
+                port:
+                  number: 8081
+    # fintics-web
+    - host: fintics-web.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fintics-web
+                port:
+                  number: 8080
+    # fintics-daemon
+    - host: fintics-daemon.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fintics-daemon
+                port:
+                  number: 8081
+    # fintics-etf
+    - host: fintics-etf.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fintics-etf
+                port:
+                  number: 8080
+    # fintics-ai
+    - host: fintics-ai.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fintics-ai
+                port:
+                  number: 8080
+    # duice-example
+    - host: duice-example.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: duice-example
+                port:
+                  number: 3000
+    # soma-admin
+    - host: soma-admin.oopscraft.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: soma-admin
+                port:
+                  number: 8080
+    # soma-collector
+    - host: soma-collector.oopscraft.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: soma-collector
+                port:
+                  number: 8080
+    # batman-admin
+    - host: batman-admin.oopscraft.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: batman-admin
+                port:
+                  number: 8080
+

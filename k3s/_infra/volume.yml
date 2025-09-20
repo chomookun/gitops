@@ -1,0 +1,38 @@
+#==================================================
+# pv-nfs
+#==================================================
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-data
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 100Mi
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.0.2
+    path: /home/chomookun/nfs
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: pvc-data
+    namespace: default
+
+---
+#==================================================
+# pvc-data
+#==================================================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-data
+  namespace: default
+spec:
+  volumeName: pv-data
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
