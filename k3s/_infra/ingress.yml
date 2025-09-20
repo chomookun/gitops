@@ -8,7 +8,7 @@ metadata:
   namespace: argocd
   annotations:
     traefik.ingress.kubernetes.io/router.tls: "true"
-#    traefik.ingress.kubernetes.io/service.serversscheme: "https"
+    traefik.ingress.kubernetes.io/service.serversscheme: "https"
 spec:
   ingressClassName: traefik
   rules:
