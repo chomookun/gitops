@@ -16,6 +16,8 @@ spec:
       labels:
         app: fintics-daemon
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: chomookun-linux
       imagePullSecrets:
         - name: docker-credentials
       containers:
