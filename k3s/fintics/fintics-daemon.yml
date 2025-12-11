@@ -18,6 +18,10 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/hostname: chomookun-linux
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
       imagePullSecrets:
         - name: docker-credentials
       containers:
