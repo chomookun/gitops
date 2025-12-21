@@ -16,12 +16,12 @@ spec:
       labels:
         app: fintics-daemon
     spec:
-#      nodeSelector:
-#        kubernetes.io/hostname: fintics
-#      tolerations:
-#        - key: "node-role.kubernetes.io/control-plane"
-#          operator: "Exists"
-#          effect: "NoSchedule"
+      nodeSelector:
+        node-role.kubernetes.io/fintics-daemon: ""
+      tolerations:
+        - key: "node-role.kubernetes.io/fintics-daemon"
+          operator: "Exists"
+          effect: "NoSchedule"
       imagePullSecrets:
         - name: docker-credentials
       containers:
