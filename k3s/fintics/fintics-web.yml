@@ -17,9 +17,9 @@ spec:
         app: fintics-web
     spec:
       nodeSelector:
-        node-role.kubernetes.io/fintics-web: ""
+        node-role.kubernetes.io/fintics: ""
       tolerations:
-        - key: "node-role.kubernetes.io/fintics-web"
+        - key: "node-role.kubernetes.io/fintics"
           operator: "Exists"
           effect: "NoSchedule"
       imagePullSecrets:

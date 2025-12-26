@@ -17,9 +17,9 @@ spec:
         app: fintics-daemon
     spec:
       nodeSelector:
-        node-role.kubernetes.io/fintics-daemon: ""
+        node-role.kubernetes.io/fintics: ""
       tolerations:
-        - key: "node-role.kubernetes.io/fintics-daemon"
+        - key: "node-role.kubernetes.io/fintics"
           operator: "Exists"
           effect: "NoSchedule"
       imagePullSecrets:
