@@ -16,12 +16,12 @@ spec:
       labels:
         app: fintics-web
     spec:
-      nodeSelector:
-        node-role.kubernetes.io/fintics: ""
-      tolerations:
-        - key: "node-role.kubernetes.io/fintics"
-          operator: "Exists"
-          effect: "NoSchedule"
+#      nodeSelector:
+#        node-role.kubernetes.io/fintics: ""
+#      tolerations:
+#        - key: "node-role.kubernetes.io/fintics"
+#          operator: "Exists"
+#          effect: "NoSchedule"
       imagePullSecrets:
         - name: docker-credentials
       containers:
