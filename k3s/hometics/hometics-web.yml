@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: hometics-web
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
