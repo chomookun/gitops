@@ -116,6 +116,28 @@ spec:
                 name: fintics-ai
                 port:
                   number: 8080
+    # hometics-web
+    - host: hometics-web.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: hometics-web
+                port:
+                  number: 8080
+    # hometics-daemon
+    - host: hometics-daemon.chomookun.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: hometics-daemon
+                port:
+                  number: 8081
     # duice-example
     - host: duice-example.chomookun.org
       http:
